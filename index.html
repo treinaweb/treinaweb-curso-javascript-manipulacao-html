@@ -1,25 +1,22 @@
 <body>
-    <div id="container">
-        <span>teste</span>
-        <h1 id="titulo">Maniplando DOM</h1>
-        <p>parágrafo 1</p>
-        <p>parágrafo 2</p>
-        <p>parágrafo 3</p>
-    </div>
+    <input id="btn" type="text">
 
     <script>
-        // const container = document.querySelector('#container');
-        // console.log(container);
-        // console.log('Filhos do container', container.children);
-        // console.log('Primeiro filho', container.firstElementChild);
-        // console.log('último filho', container.lastElementChild);
+        const btn = document.querySelector("#btn");
+        console.log(btn);
+        btn.setAttribute('placeholder', 'novo texto do placeholder')
+        // btn.removeAttribute('placeholder')
+        // btn.removeAttribute('type');
 
-        const titulo = document.querySelector('#titulo');
-        console.log(titulo);
+        console.log(btn.hasAttribute('placeholder'));
+        console.log(btn.getAttribute('type'));
 
-        // console.log('Próximo irmão', titulo.nextElementSibling);
-        // console.log('Irmão anterior', titulo.previousElementSibling);
-        // console.log('Elemento pai', titulo.parentElement);
-        // console.log("Próximo irmão do parágrafo 2", titulo.nextElementSibling.nextElementSibling.nextElementSibling.innerText)
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('value', 'Click')
+        btn.setAttribute('onclick', 'print()')
+
+        function print() {
+            alert('executou');
+        }
     </script>
 </body>
