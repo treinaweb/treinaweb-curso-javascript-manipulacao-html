@@ -1,22 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: grey;
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+        }
+
+        .ativo {
+            background-color: blue;
+        }
+    </style>
+</head>
+
 <body>
     <input id="btn" type="text">
+    <div></div>
 
     <script>
         const btn = document.querySelector("#btn");
-        console.log(btn);
-        btn.setAttribute('placeholder', 'novo texto do placeholder')
-        // btn.removeAttribute('placeholder')
-        // btn.removeAttribute('type');
-
-        console.log(btn.hasAttribute('placeholder'));
-        console.log(btn.getAttribute('type'));
-
         btn.setAttribute('type', 'button');
         btn.setAttribute('value', 'Click')
-        btn.setAttribute('onclick', 'print()')
+        btn.setAttribute('onclick', 'toggle()')
 
-        function print() {
-            alert('executou');
+        const container = document.querySelector('div');
+
+        // container.style.backgroundColor = 'red'
+
+        // console.log(container.classList.contains('ativo'))
+        // container.classList.add('ativo')
+
+        function toggle() {
+            container.classList.toggle('ativo');
+            // if (container.classList.contains('ativo')) {
+
+            //     container.classList.remove('ativo')
+            // } else {
+            //     container.classList.add('ativo')
+            // }
         }
+
     </script>
 </body>
+
+</html>
