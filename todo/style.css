@@ -1,0 +1,60 @@
+body{
+    font-family: 'Ariel', 'sans-serif';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+.container{
+    width: 300px;
+}
+
+input, button{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button{
+    background-color: #007BFF;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #0056B3;
+}
+
+ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+li{
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.edit,
+.delete{
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+}
+
+.edit{
+    right: 40px;
+    color: green;
+}
+.delete{
+    right: 10px;
+    color: red;
+}
