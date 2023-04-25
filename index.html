@@ -1,19 +1,86 @@
 <body>
-    <p id="paragrafo">Este é um parágrafo de exemplo.</p>
-    <input type="text" id="input">
+    <h1>Manipulando DOM</h1>
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
 
-    <button>Substituir</button>
-    <span></span>
+    <button onclick="addListItem()">Adicionar item</button>
+    <br />
+    <br />
+
+    <button onclick="removerListItem()">Remover item</button>
+
+    <br />
+    <br />
+
+    <button onclick="insertBeforeElement()">Inserir item antes do primeiro</button>
+    <br />
+    <br />
+
+    <button onclick="insertAfterElement()">Inserir item depois do último</button>
+    <br />
+    <br />
+    <button onclick="cloneList()">Clonar lista</button>
+
+    <br />
+    <br />
+    <input type="text" id="input-text">
+    <button onclick="addTextNode()">adicionar texto</button>
+
+    <br />
+    <br />
+    <p id="paragrafo"></p>
+
     <script>
-        const paragrafo = document.querySelector('span');
-        const input = document.querySelector('input');
+        // adiciona elemento ao HTML
+        function addListItem() {
+            const lista = document.querySelector('#lista');
+            const listItem = document.createElement('li');
+            listItem.innerText = 'elemento criado com addListItem'
+            lista.appendChild(listItem)
+        }
 
-        // paragrafo.textContent = '<br /> Este parágrafo foi alteado'
-        // paragrafo.innerText = '<br /> Este parágrafo foi alteado'
-        paragrafo.innerHTML = '<br /> Este parágrafo foi alteado'
+        // remove o elemento HTML
+        function removerListItem() {
+            const lista = document.querySelector('#lista');
+            const lastChild = lista.lastElementChild;
+            if (lastChild) {
 
-        input.placeholder = 'novo valor inicial do botão'
+                lastChild.remove();
+            }
+        }
 
-        console.log(paragrafo);
+
+        // insere um item antes do primeiro item da lista
+        function insertBeforeElement() {
+            const lista = document.querySelector('#lista');
+            const listItem = document.createElement('li');
+            listItem.innerText = 'insertBeforeElement';
+            lista.insertBefore(listItem, lista.firstElementChild)
+        }
+
+
+        // inserir um item depois do último item da lista
+        function insertAfterElement() {
+            const lista = document.querySelector('#lista');
+            const listItem = document.createElement('li');
+            listItem.innerText = 'insertAfterElement';
+            lista.insertAdjacentHTML('beforeend', listItem.outerHTML);
+        }
+
+        // clona a lista e insere no html
+        function cloneList() {
+            const lista = document.querySelector('#lista');
+            const coleDaLista = lista.cloneNode(true);
+            lista.insertAdjacentElement('afterend', coleDaLista);
+        }
+
+        function addTextNode() {
+            const text = document.querySelector("#input-text");
+            const newText = document.createTextNode(text.value);
+            const paragrafo = document.querySelector('#paragrafo');
+            paragrafo.appendChild(newText);
+        }
     </script>
 </body>
