@@ -1,24 +1,19 @@
 <body>
-    <h1 id="title">Manupulando DOM</h1>
-    <p class="text">Parágrafo 1</p>
-    <p class="text">Parágrafo 2</p>
-    <button>Clique aqui</button>
+    <p id="paragrafo">Este é um parágrafo de exemplo.</p>
+    <input type="text" id="input">
+
+    <button>Substituir</button>
+    <span></span>
     <script>
-        // Acessar elemento pelo ID (retorna um único elemento)
-        console.log(document.getElementById('title'));
+        const paragrafo = document.querySelector('span');
+        const input = document.querySelector('input');
 
-        // Acessar uma lista de elementos pela classe
-        console.log(document.getElementsByClassName('text'))
+        // paragrafo.textContent = '<br /> Este parágrafo foi alteado'
+        // paragrafo.innerText = '<br /> Este parágrafo foi alteado'
+        paragrafo.innerHTML = '<br /> Este parágrafo foi alteado'
 
+        input.placeholder = 'novo valor inicial do botão'
 
-        // Acessar uma lista de elementos pelo nome da tag
-        console.log(document.getElementsByTagName('button'))
-
-        // Acessa um único elemento usando querySelector
-        console.log(document.querySelector('h1'))
-
-        // Acessa uma lista de elementos usando querySelectorAll
-        console.log(document.querySelectorAll('#title'))
-
+        console.log(paragrafo);
     </script>
 </body>
