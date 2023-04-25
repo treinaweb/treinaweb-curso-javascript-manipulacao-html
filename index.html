@@ -1,13 +1,24 @@
 <body>
-    <h1>Treinaweb Direto ao ponto de JavaScript DOM</h1>
-    <P>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse illo obcaecati amet itaque aliquam, quisquam
-        tenetur, eos nihil corrupti id sint quae natus, cupiditate possimus adipisci ea ex. Autem, fuga.
-
-        <strong>Eu adipisicing consequat velit excepteur excepteur in in officia commodo anim.</strong>
-    </P>
-
+    <h1 id="title">Manupulando DOM</h1>
+    <p class="text">Parágrafo 1</p>
+    <p class="text">Parágrafo 2</p>
+    <button>Clique aqui</button>
     <script>
-        console.log("olá mundo no console.");
+        // Acessar elemento pelo ID (retorna um único elemento)
+        console.log(document.getElementById('title'));
+
+        // Acessar uma lista de elementos pela classe
+        console.log(document.getElementsByClassName('text'))
+
+
+        // Acessar uma lista de elementos pelo nome da tag
+        console.log(document.getElementsByTagName('button'))
+
+        // Acessa um único elemento usando querySelector
+        console.log(document.querySelector('h1'))
+
+        // Acessa uma lista de elementos usando querySelectorAll
+        console.log(document.querySelectorAll('#title'))
+
     </script>
 </body>
